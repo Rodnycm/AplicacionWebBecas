@@ -1,0 +1,12 @@
+C:\Users\backi_000\Documents\Visual Studio 2013\Projects\AplicacionBecas2\DAL\bin\Release\DAL.dll
+C:\Users\backi_000\Documents\Visual Studio 2013\Projects\AplicacionBecas2\DAL\bin\Release\DAL.pdb
+C:\Users\backi_000\Documents\Visual Studio 2013\Projects\AplicacionBecas2\DAL\bin\Release\EntitiesLayer.dll
+C:\Users\backi_000\Documents\Visual Studio 2013\Projects\AplicacionBecas2\DAL\bin\Release\TIL.dll
+C:\Users\backi_000\Documents\Visual Studio 2013\Projects\AplicacionBecas2\DAL\bin\Release\EASendMail45.dll
+C:\Users\backi_000\Documents\Visual Studio 2013\Projects\AplicacionBecas2\DAL\bin\Release\EntitiesLayer.pdb
+C:\Users\backi_000\Documents\Visual Studio 2013\Projects\AplicacionBecas2\DAL\bin\Release\TIL.pdb
+C:\Users\backi_000\Documents\Visual Studio 2013\Projects\AplicacionBecas2\DAL\obj\Release\DAL.csprojResolveAssemblyReference.cache
+C:\Users\backi_000\Documents\Visual Studio 2013\Projects\AplicacionBecas2\DAL\obj\Release\DAL.Properties.Resources.resources
+C:\Users\backi_000\Documents\Visual Studio 2013\Projects\AplicacionBecas2\DAL\obj\Release\DAL.csproj.GenerateResource.Cache
+C:\Users\backi_000\Documents\Visual Studio 2013\Projects\AplicacionBecas2\DAL\obj\Release\DAL.dll
+C:\Users\backi_000\Documents\Visual Studio 2013\Projects\AplicacionBecas2\DAL\obj\Release\DAL.pdb

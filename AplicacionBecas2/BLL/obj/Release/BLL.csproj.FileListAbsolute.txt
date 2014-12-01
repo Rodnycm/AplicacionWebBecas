@@ -1,0 +1,14 @@
+C:\Users\backi_000\Documents\Visual Studio 2013\Projects\AplicacionBecas2\BLL\bin\Release\BLL.dll
+C:\Users\backi_000\Documents\Visual Studio 2013\Projects\AplicacionBecas2\BLL\bin\Release\BLL.pdb
+C:\Users\backi_000\Documents\Visual Studio 2013\Projects\AplicacionBecas2\BLL\bin\Release\DAL.dll
+C:\Users\backi_000\Documents\Visual Studio 2013\Projects\AplicacionBecas2\BLL\bin\Release\EntitiesLayer.dll
+C:\Users\backi_000\Documents\Visual Studio 2013\Projects\AplicacionBecas2\BLL\bin\Release\TIL.dll
+C:\Users\backi_000\Documents\Visual Studio 2013\Projects\AplicacionBecas2\BLL\bin\Release\EASendMail45.dll
+C:\Users\backi_000\Documents\Visual Studio 2013\Projects\AplicacionBecas2\BLL\bin\Release\DAL.pdb
+C:\Users\backi_000\Documents\Visual Studio 2013\Projects\AplicacionBecas2\BLL\bin\Release\EntitiesLayer.pdb
+C:\Users\backi_000\Documents\Visual Studio 2013\Projects\AplicacionBecas2\BLL\bin\Release\TIL.pdb
+C:\Users\backi_000\Documents\Visual Studio 2013\Projects\AplicacionBecas2\BLL\obj\Release\BLL.csprojResolveAssemblyReference.cache
+C:\Users\backi_000\Documents\Visual Studio 2013\Projects\AplicacionBecas2\BLL\obj\Release\BLL.Properties.Resources.resources
+C:\Users\backi_000\Documents\Visual Studio 2013\Projects\AplicacionBecas2\BLL\obj\Release\BLL.csproj.GenerateResource.Cache
+C:\Users\backi_000\Documents\Visual Studio 2013\Projects\AplicacionBecas2\BLL\obj\Release\BLL.dll
+C:\Users\backi_000\Documents\Visual Studio 2013\Projects\AplicacionBecas2\BLL\obj\Release\BLL.pdb
