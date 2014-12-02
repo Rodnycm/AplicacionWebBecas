@@ -112,20 +112,16 @@ Public Class uCtrlCrearCarrera
 
                 If nombreCompleto.Equals(directorAcademico) Then
 
-                    idDirector = listaDirectores(i).identificacion
+                    idDirector = listaDirectores(i).Id
 
                 End If
-
             Next
         End If
-
 
         Try
 
             objGestorCarrera.agregarCarrera(nombre, codigo, color, idDirector)
             objGestorCarrera.guardarCambios()
-
-
             mantenimientoCarreras.listarCarreras()
 
         Catch ex As Exception

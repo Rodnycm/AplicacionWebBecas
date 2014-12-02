@@ -13,3 +13,8 @@ C:\Users\backi_000\Documents\GitHub\AplicacionGestionBecas\GestionBecas\Aplicaci
 C:\Users\backi_000\Documents\GitHub\AplicacionGestionBecas\GestionBecas\AplicacionBecas\TIL\obj\Debug\TIL.csprojResolveAssemblyReference.cache
 C:\Users\backi_000\Documents\GitHub\AplicacionGestionBecas\GestionBecas\AplicacionBecas\TIL\obj\Debug\TIL.dll
 C:\Users\backi_000\Documents\GitHub\AplicacionGestionBecas\GestionBecas\AplicacionBecas\TIL\obj\Debug\TIL.pdb
+C:\Users\Prophet\Desktop\AplicacionWebBecas\AplicacionBecas2\TIL\bin\Debug\TIL.dll
+C:\Users\Prophet\Desktop\AplicacionWebBecas\AplicacionBecas2\TIL\bin\Debug\TIL.pdb
+C:\Users\Prophet\Desktop\AplicacionWebBecas\AplicacionBecas2\TIL\obj\Debug\TIL.csprojResolveAssemblyReference.cache
+C:\Users\Prophet\Desktop\AplicacionWebBecas\AplicacionBecas2\TIL\obj\Debug\TIL.dll
+C:\Users\Prophet\Desktop\AplicacionWebBecas\AplicacionBecas2\TIL\obj\Debug\TIL.pdb

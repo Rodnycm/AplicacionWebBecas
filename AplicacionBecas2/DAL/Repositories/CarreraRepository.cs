@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using EntitiesLayer;
-using System.Collections;
+using System.Configuration;
 using System.Transactions;
 using System.Data.SqlClient;
 using System.Data;
+using System.Windows.Forms;
+using TIL;
 
 namespace DAL.Repositories
 {
@@ -14,7 +17,10 @@ namespace DAL.Repositories
     public class CarreraRepository : IRepository<Carrera>
     {
         private string actividad;
+        private static int numero;
+        private static string mensaje;
         private static CarreraRepository instance;
+        private static Excepciones exceptions = new Excepciones();
         private List<IEntity> _insertItems;
         private List<IEntity> _deleteItems;
         private List<IEntity> _updateItems;
@@ -65,84 +71,95 @@ namespace DAL.Repositories
 
         public IEnumerable<Carrera> GetAll()
         {
-            List<Carrera> pCarrera = null;
-            SqlCommand cmd = new SqlCommand();
-            Usuario directorAcademico = null;
-            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_consultarCarreras");
-
-            if (ds.Tables[0].Rows.Count > 0)
+            try
             {
-                pCarrera = new List<Carrera>();
-                foreach (DataRow dr in ds.Tables[0].Rows)
-                {
-                    int idDirector = Convert.ToInt32(dr["DirectorAcademico"]);
-                    directorAcademico = UsuarioRepository.Instance.GetById(idDirector);
-                    pCarrera.Add(new Carrera
-                    {
-                        Id = Convert.ToInt32(dr["IdCarrera"]),
-                        nombre = dr["Nombre"].ToString(),
-                        codigo = dr["Codigo"].ToString(),
-                        color = dr["Color"].ToString(),
-                        directorAcademico = directorAcademico
-                    });
-                }
-            }
+                List<Carrera> pCarrera = null;
+                SqlCommand cmd = new SqlCommand();
+                Usuario directorAcademico = null;
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_consultarCarreras");
 
-            return pCarrera;
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+
+                    pCarrera = new List<Carrera>();
+                    foreach (DataRow dr in ds.Tables[0].Rows)
+                    {
+                        int idDirector = Convert.ToInt32(dr["DirectorAcademico"]);
+                        directorAcademico = UsuarioRepository.Instance.GetById(idDirector);
+                        pCarrera.Add(new Carrera
+                        {
+                            nombre = dr["Nombre"].ToString(),
+                            codigo = dr["Codigo"].ToString(),
+                            color = dr["Color"].ToString(),
+                            Id = Convert.ToInt32(dr["idCarrera"]),
+                            directorAcademico = directorAcademico
+                        });
+                    }
+                }
+
+                return pCarrera;
+            }
+            catch (SqlException ex)
+            {
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
 
         public Carrera GetByNombre(String parametro)
         {
 
-            Carrera carrera = null;
-            Usuario directorAcademico = null;
-            SqlCommand cmd = new SqlCommand();
-            cmd.Parameters.AddWithValue("@parametro", parametro);
-
-            DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarCarrera");
-
-            if (ds.Tables[0].Rows.Count > 0)
+            try
             {
-                var dr = ds.Tables[0].Rows[0];
 
-                int idDirector = Convert.ToInt32(dr["DirectorAcademico"]);
-                directorAcademico = UsuarioRepository.Instance.GetById(idDirector);
-                carrera = new Carrera
+                Carrera carrera = new Carrera();
+                Usuario directorAcademico = null;
+                SqlCommand cmd = new SqlCommand();
+                cmd.Parameters.AddWithValue("@parametro", parametro);
+
+                DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_buscarCarrera");
+
+                if (ds.Tables[0].Rows.Count > 0)
                 {
-                    Id = Convert.ToInt32(dr["IdCarrera"]),
-                    nombre = dr["Nombre"].ToString(),
-                    codigo = dr["Codigo"].ToString(),
-                    color = dr["Color"].ToString(),
-                    directorAcademico = directorAcademico
-                };
+                    var dr = ds.Tables[0].Rows[0];
+
+                    int idDirector = Convert.ToInt32(dr["DirectorAcademico"]);
+                    directorAcademico = UsuarioRepository.Instance.GetById(idDirector);
+                    carrera = new Carrera
+                    {
+                        nombre = dr["Nombre"].ToString(),
+                        codigo = dr["Codigo"].ToString(),
+                        color = dr["Color"].ToString(),
+                        Id = Convert.ToInt32(dr["IdCarrera"]),
+                        directorAcademico = directorAcademico
+                    };
+                }
+                return carrera;
+
             }
-            return carrera;
+            catch (SqlException ex)
+            {
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
         }
 
         public Carrera GetById(int id)
         {
 
             Carrera objCarrera = null;
-            var sqlQuery = "";
-            SqlCommand cmd = new SqlCommand(sqlQuery);
-            cmd.Parameters.AddWithValue("@idProducto", id);
-
-            var ds = DBAccess.ExecuteQuery(cmd);
-
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-
-                var dr = ds.Tables[0].Rows[0];
-                objCarrera = new Carrera
-                {
-
-                    nombre = dr["nombre"].ToString(),
-                    codigo = dr["tipo"].ToString(),
-                    color = dr["color"].ToString(),
-                    //directorAcademico = dr["director"].ToString()
-                };
-            }
 
             return objCarrera;
         }
@@ -226,17 +243,26 @@ namespace DAL.Repositories
                 cmd.Parameters.Add(new SqlParameter("@Codigo", objCarrera.codigo));
                 cmd.Parameters.Add(new SqlParameter("@Nombre", objCarrera.nombre));
                 cmd.Parameters.Add(new SqlParameter("@Color", objCarrera.color));
-                cmd.Parameters.Add(new SqlParameter("@DirectorAcademico", objCarrera.directorAcademico.identificacion));
-
+                cmd.Parameters.Add(new SqlParameter("@DirectorAcademico", objCarrera.directorAcademico.Id));
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_agregarCarrera");
 
                 actividad = "Se ha registrado una Carrera";
                 registrarAccion(actividad);
 
             }
+            catch (SqlException ex)
+            {
+
+                numero = ex.Number;
+                mensaje = exceptions.excepciones(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+
+            }
             catch (Exception ex)
             {
+
                 throw ex;
+
             }
         }
 
@@ -253,15 +279,25 @@ namespace DAL.Repositories
                 cmd.Parameters.Add(new SqlParameter("@Nombre", objCarrera.nombre));
                 cmd.Parameters.Add(new SqlParameter("@Color", objCarrera.color));
                 cmd.Parameters.Add(new SqlParameter("@idCarrera", objCarrera.Id));
-                cmd.Parameters.Add(new SqlParameter("@DirectorAcademico", objCarrera.directorAcademico.identificacion));
+                cmd.Parameters.Add(new SqlParameter("@DirectorAcademico", objCarrera.directorAcademico.Id));
                 DataSet ds = DBAccess.ExecuteSPWithDS(ref cmd, "Sp_modificarCarrera");
 
                 actividad = "Se ha modificado una Carrera";
                 registrarAccion(actividad);
 
             }
+            catch (SqlException ex)
+            {
+
+                numero = ex.Number;
+                mensaje = exceptions.excepciones(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+
+            }
             catch (Exception ex)
             {
+
+                throw ex;
 
             }
         }
@@ -284,8 +320,17 @@ namespace DAL.Repositories
             }
             catch (SqlException ex)
             {
-                //logear la excepcion a la bd con un Exception
-                //throw new DataAccessException("Ha ocurrido un error al eliminar un usuario", ex);
+
+                numero = ex.Number;
+                mensaje = exceptions.excepciones(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+
             }
         }
 
@@ -297,20 +342,18 @@ namespace DAL.Repositories
             string nombreUsuario = Globals.usuario.primerNombre;
             string nombreRol = Globals.usuario.rol.Nombre;
             string descripcion = pactividad;
-
-
             objRegistro = new RegistroAccion(nombreUsuario, nombreRol, descripcion, fecha);
 
             try
             {
                 RegistroAccionRepository.Instance.InsertAccion(objRegistro);
             }
-            //catch (SqlException ex)
-            //{
-            //    numero = ex.Number;
-            //    mensaje = exceptions.validarExcepcion(numero);
-            //    throw new CustomExceptions.DataAccessException(mensaje, ex);
-            //}
+            catch (SqlException ex)
+            {
+                numero = ex.Number;
+                mensaje = exceptions.validarExcepcion(numero);
+                throw new CustomExceptions.DataAccessException(mensaje, ex);
+            }
             catch (Exception e)
             {
 

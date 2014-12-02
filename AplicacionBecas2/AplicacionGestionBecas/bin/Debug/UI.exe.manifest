@@ -74,7 +74,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>1TSqhLlTcBVz0wNSan9uOcYg0O2kkHdkMMFOsSKiwHU=</dsig:DigestValue>
+        <dsig:DigestValue>LHjC19DR2ruGMFcvs2FMsUGIeFDFaIZ5TqXEtW2BMD4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,7 +86,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Q0KjH2o6kRPEhHcTk7J/7goOEfT/K3CyfwHrz14PiSk=</dsig:DigestValue>
+        <dsig:DigestValue>AwdGsMPW0AZ4S8STsaEw11gAYOLgVQ4bvydrPop29eE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -110,7 +110,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>UriwGR3J2c4kXLf4KuLx2aBYunvawoVw540Uj9efFUg=</dsig:DigestValue>
+        <dsig:DigestValue>lcSLrdqNcZ4WGgTUP9KT3JCyQtrA72H6C5rQu2VoLFU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="es\Microsoft.SqlServer.Types.resources.dll" size="48752">
+      <assemblyIdentity name="Microsoft.SqlServer.Types.resources" version="11.0.0.0" publicKeyToken="89845DCD8080CC91" language="es" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>ZyQXIAIhW62/lY5xIonvlhfc6jCoBx8LjuTEWtXsBLU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -122,7 +134,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>BZP/qZD2zmccvNTZy7qcvLunB5IiFE2BTuhkOyuRsNk=</dsig:DigestValue>
+        <dsig:DigestValue>smEi0sPAGclxjFadvlxMYOspsEc83dgtbosm8HY5Z9k=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -134,17 +146,17 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>T3JheKs8WoqhIJDACpTN1NoghRXPaQNUttcEYUNnn3c=</dsig:DigestValue>
+        <dsig:DigestValue>MPuoOz2D9++NI3sLUjs1Buviu760bva1i03J8xi0jiE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="UI.exe.config" size="462">
+  <file name="UI.exe.config" size="452">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>GXk7pagdJ+4zWCGoL9YacbmFKScM0VCYDLyKF9idcrM=</dsig:DigestValue>
+      <dsig:DigestValue>EDQ2EwUmuGCOBPjqUHwTN14xxED7CPTJPRxkx59xgeU=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

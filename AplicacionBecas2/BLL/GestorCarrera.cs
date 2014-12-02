@@ -11,7 +11,7 @@ namespace BLL
 
     public class GestorCarrera
     {
-  
+
         /// <summary>
         /// Agrega una nueva carrera
         /// </summary>
@@ -21,9 +21,9 @@ namespace BLL
         /// <param name="idDirector">id del director de la carrera</param>
         /// <autor>Alvaro Artavia</autor>
 
-        public void agregarCarrera(string nombre, string codigo, string color, string idDirector)
+        public void agregarCarrera(string nombre, string codigo, string color, int idDirector)
         {
-            Usuario director = UsuarioRepository.Instance.GetByNombre(idDirector);
+            Usuario director = UsuarioRepository.Instance.GetById(idDirector);
             Carrera carrera = ContenedorMantenimiento.Instance.crearObjetoCarrera(nombre, codigo, color, director);
             try
             {
@@ -33,7 +33,8 @@ namespace BLL
                     CarreraRepository.Instance.Insert(carrera);
 
                 }
-                else {
+                else
+                {
 
                     StringBuilder sb = new StringBuilder();
                     foreach (RuleViolation rv in carrera.GetRuleViolations())
@@ -41,9 +42,9 @@ namespace BLL
                         sb.AppendLine(rv.ErrorMessage);
                     }
                     throw new ApplicationException(sb.ToString());
-                
+
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -57,10 +58,11 @@ namespace BLL
         /// </summary>
         /// <returns>lista de usuarios</returns>
 
-        public IEnumerable <Usuario> consultarDirectoresAcademicos() {
+        public IEnumerable<Usuario> consultarDirectoresAcademicos()
+        {
 
             return UsuarioRepository.Instance.GetDirectoresAcademicos();
-        
+
         }
 
         /// <summary>
@@ -81,19 +83,22 @@ namespace BLL
         //    }
         //    CursoRepository.Instance.asignarCurso(objCarrera);
         //}
-        public void modificarCarrera(string nombre, string codigo, string color, int idCarrera, string idDirector)
+        public void modificarCarrera(string nombre, string codigo, string color, int idCarrera, int idDirector)
         {
-            Usuario director = UsuarioRepository.Instance.GetByNombre(idDirector);
+            Usuario director = UsuarioRepository.Instance.GetById(idDirector);
             Carrera carrera = ContenedorMantenimiento.Instance.crearObjetoCarrera(nombre, codigo, color, idCarrera, director);
 
             try
             {
-                if(carrera.IsValid){
+                if (carrera.IsValid)
+                {
 
                     CarreraRepository.Instance.UpdateCarrera(carrera);
 
-                }else{
-                    
+                }
+                else
+                {
+
                     StringBuilder sb = new StringBuilder();
                     foreach (RuleViolation rv in carrera.GetRuleViolations())
                     {
@@ -101,7 +106,7 @@ namespace BLL
                     }
                     throw new ApplicationException(sb.ToString());
                 }
-               
+
             }
             catch (Exception ex)
             {
@@ -147,13 +152,6 @@ namespace BLL
 
         }
 
-         public List<Carrera>consultarCarrerasService()
-        {
-
-            return CarreraRepository.Instance.GetAll().ToList<Carrera>();
-
-        }
-
         /// <summary>
         /// Ejecuta los metodos de la capa DAL
         /// </summary>
@@ -163,7 +161,7 @@ namespace BLL
 
             CarreraRepository.Instance.Save();
         }
-        public void asignarCursosCarrera(List<Curso>listaCursos, Carrera objCarrera)
+        public void asignarCursosCarrera(List<Curso> listaCursos, Carrera objCarrera)
         {
             CursoRepository.objCarrera = objCarrera;
             foreach (Curso objCurso in listaCursos)

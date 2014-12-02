@@ -8,3 +8,13 @@ C:\Users\backi_000\Documents\Visual Studio 2013\Projects\AplicacionBecas2\IUWeb\
 C:\Users\backi_000\Documents\Visual Studio 2013\Projects\AplicacionBecas2\IUWeb\obj\Debug\IUWeb.dll
 C:\Users\backi_000\Documents\Visual Studio 2013\Projects\AplicacionBecas2\IUWeb\obj\Debug\IUWeb.xml
 C:\Users\backi_000\Documents\Visual Studio 2013\Projects\AplicacionBecas2\IUWeb\obj\Debug\IUWeb.pdb
+C:\Users\Prophet\Desktop\AplicacionWebBecas\AplicacionBecas2\IUWeb\bin\IUWeb.dll.config
+C:\Users\Prophet\Desktop\AplicacionWebBecas\AplicacionBecas2\IUWeb\bin\IUWeb.dll
+C:\Users\Prophet\Desktop\AplicacionWebBecas\AplicacionBecas2\IUWeb\bin\IUWeb.pdb
+C:\Users\Prophet\Desktop\AplicacionWebBecas\AplicacionBecas2\IUWeb\bin\IUWeb.xml
+C:\Users\Prophet\Desktop\AplicacionWebBecas\AplicacionBecas2\IUWeb\obj\Debug\IUWeb.vbprojResolveAssemblyReference.cache
+C:\Users\Prophet\Desktop\AplicacionWebBecas\AplicacionBecas2\IUWeb\obj\Debug\IUWeb.Resources.resources
+C:\Users\Prophet\Desktop\AplicacionWebBecas\AplicacionBecas2\IUWeb\obj\Debug\IUWeb.vbproj.GenerateResource.Cache
+C:\Users\Prophet\Desktop\AplicacionWebBecas\AplicacionBecas2\IUWeb\obj\Debug\IUWeb.dll
+C:\Users\Prophet\Desktop\AplicacionWebBecas\AplicacionBecas2\IUWeb\obj\Debug\IUWeb.xml
+C:\Users\Prophet\Desktop\AplicacionWebBecas\AplicacionBecas2\IUWeb\obj\Debug\IUWeb.pdb

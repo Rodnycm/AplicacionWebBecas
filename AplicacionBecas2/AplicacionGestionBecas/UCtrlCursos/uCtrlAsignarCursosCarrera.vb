@@ -44,12 +44,12 @@ Public Class uCtrlAsignarCursosCarrera
     End Sub
 
     Private Sub uCtrlAsignarCursosCarrera_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        listaCursos = objGestorCurso.consultarCursos()
+        'listaCursos = objGestorCurso.consultarCursos()
 
-        For i As Integer = 0 To listaCursos.Count - 1
+        'For i As Integer = 0 To listaCursos.Count - 1
 
-            chkCursos.Items.Add(listaCursos.Item(i).nombre)
+        '    chkCursos.Items.Add(listaCursos.Item(i).nombre)
 
-        Next
+        'Next
     End Sub
 End Class

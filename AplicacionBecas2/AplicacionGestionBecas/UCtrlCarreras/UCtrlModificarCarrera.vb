@@ -99,7 +99,6 @@ Public Class uCtrlModificarCarrera
 
         Try
 
-
             listaDirectores = objGestorCarrera.consultarDirectoresAcademicos()
 
             If listaDirectores Is Nothing Then
@@ -156,9 +155,6 @@ Public Class uCtrlModificarCarrera
 
     End Sub
 
-
-
-
     ''' <summary>Busca el director academico anterior para eliminarlo de la base de datos</summary>
     ''' <param name="pdirector">Nombre del director academico</param>
     ''' <autor>Alvaro Artavia</autor>
@@ -167,7 +163,6 @@ Public Class uCtrlModificarCarrera
 
         Dim nombreCompleto As String
         Dim idDirector As String = ""
-
         If listaDirectores Is Nothing Then
 
         Else
@@ -179,17 +174,13 @@ Public Class uCtrlModificarCarrera
 
                 If nombreCompleto.Equals(pdirector) Then
 
-                    idDirector = listaDirectores(i).identificacion
+                    idDirector = listaDirectores(i).Id
 
                 End If
-
             Next
-
         End If
 
         Return idDirector
 
     End Function
-
-
 End Class

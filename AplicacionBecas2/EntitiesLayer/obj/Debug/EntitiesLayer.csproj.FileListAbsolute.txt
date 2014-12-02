@@ -21,3 +21,9 @@ C:\Users\backi_000\Documents\Visual Studio 2013\Projects\AplicacionBecas2\Entiti
 C:\Users\backi_000\Documents\Visual Studio 2013\Projects\AplicacionBecas2\EntitiesLayer\obj\Debug\EntitiesLayer.csprojResolveAssemblyReference.cache
 C:\Users\backi_000\Documents\Visual Studio 2013\Projects\AplicacionBecas2\EntitiesLayer\obj\Debug\EntitiesLayer.dll
 C:\Users\backi_000\Documents\Visual Studio 2013\Projects\AplicacionBecas2\EntitiesLayer\obj\Debug\EntitiesLayer.pdb
+C:\Users\Prophet\Desktop\AplicacionWebBecas\AplicacionBecas2\EntitiesLayer\bin\Debug\EntitiesLayer.dll
+C:\Users\Prophet\Desktop\AplicacionWebBecas\AplicacionBecas2\EntitiesLayer\bin\Debug\EntitiesLayer.pdb
+C:\Users\Prophet\Desktop\AplicacionWebBecas\AplicacionBecas2\EntitiesLayer\bin\Debug\EASendMail45.dll
+C:\Users\Prophet\Desktop\AplicacionWebBecas\AplicacionBecas2\EntitiesLayer\obj\Debug\EntitiesLayer.csprojResolveAssemblyReference.cache
+C:\Users\Prophet\Desktop\AplicacionWebBecas\AplicacionBecas2\EntitiesLayer\obj\Debug\EntitiesLayer.dll
+C:\Users\Prophet\Desktop\AplicacionWebBecas\AplicacionBecas2\EntitiesLayer\obj\Debug\EntitiesLayer.pdb

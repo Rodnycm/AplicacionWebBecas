@@ -622,7 +622,8 @@ namespace DAL.Repositories
         public IEnumerable<Usuario> GetDirectoresAcademicos()
         {
 
-            try {
+            try
+            {
 
                 List<Usuario> pusuario = null;
                 SqlCommand cmd = new SqlCommand();
@@ -635,7 +636,7 @@ namespace DAL.Repositories
 
                     foreach (DataRow dr in ds.Tables[0].Rows)
                     {
-                        int rol = Convert.ToInt32(dr["Fk_Tb_Roles_Tb_Usuarios_IdRol"]);
+                        int rol = Convert.ToInt32(dr["IdRol"]);
 
                         rolUsuario = RolRepository.Instance.GetById(rol);
                         Usuario objUsuario = new Usuario
@@ -652,24 +653,26 @@ namespace DAL.Repositories
                             correoElectronico = dr["CorreoElectronico"].ToString(),
                             contraseña = dr["Contraseña"].ToString(),
                         };
-                        objUsuario.Id = Convert.ToInt32(dr["id"]);
+                        objUsuario.Id = Convert.ToInt32(dr["IdUsuario"]);
                         pusuario.Add(objUsuario);
                     }
                 }
                 return pusuario;
-            
-            
+
             }
-            catch (SqlException ex) {
+            catch (SqlException ex)
+            {
                 numero = ex.Number;
                 mensaje = exceptions.validarExcepcion(numero);
                 throw new CustomExceptions.DataAccessException(mensaje, ex);
-            
+
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 throw ex;
             }
         }
+
         public void registrarAccion(string pactividad)
         {
 
